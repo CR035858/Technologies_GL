@@ -1,0 +1,38 @@
+By Default the Context of any Function JS is window
+CALL
+we can change using call
+method
+say for instance
+function greet(greeting,name)
+{
+console.log(greeting+"Good Day "+name);
+}
+greet("Hello","Rajan");//IS A NORMAL CALL WITH DEFAULT INDEX
+but greet.call("mycontext","Hello","Rajan") with first argument being the context
+
+and second and third are the usual args of the method greer
+
+CALL is used to change the context
+
+APPLY 
+CAN BE USED IN SAME MANNER
+BUT ARGS CAN BE PASSED AS AN ARRAY
+
+arr1=["Good Day","Rajan"];
+greet.apply("mycontext",arr1)
+
+
+passing null as a context value will not overwrite the context
+but retains the default context like for eg."window" as context
+
+BIND
+
+
+var greetBound = greet.bind('world') //CONTEXT IS CHANGED TO "world"
+
+we can hold it in a variable
+REUSABLE
+greetBound();
+greetBound("Good Day","Rajan")
+
+to call the greet("Good Day","Rajan") with the context as 'world'

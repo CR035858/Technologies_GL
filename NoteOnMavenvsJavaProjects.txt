@@ -1,0 +1,36 @@
+Hi Tahreem,
+
+Hibernate is a framework using which we are connecting to Databases....
+traditionally we used JDBC to do this(Though Hibernate has lot of advancements & benefits), 
+now also this is being used in the background while Hibernate project is implemented,
+
+We create  different types of Java Projects (Core Java Desktop app, Web Application , Web Service , Distributed app etc) using different templates provided by Eclipse. 
+accordingly the addon frameworks like Spring or Hibernate libraries /jars can be added to the Project as per the need.
+
+When "Maven Project" is created which is already added to Eclipse as a Plugin(Maven Plugin)
+[Maven is a Build tool helping us to build, create executables & create archives  for the Project we create]
+
+Maven Based Project has few more advantages like we do not have to add the jars externally as we used to  add in the Normal Java Project, since we can specify the jars through dependencies in pom.xml and it automatically adds the jars to the project.
+
+Therefore Maven Projects can also be Created instead of Normal Java Project when we need to create projects which are Hibernate , Spring , or Web Service Oriented since we can avoid the hassles of adding jars externally.
+
+therefore it is our wish to use Maven or without Maven while creating a Project
+
+Hibernate Project can be implemented as a simple Core Java Project or a Maven Based Project
+(with above mentioned advantages)
+
+When we create a Web Project + Hibernate
+we can create 
+Dynamic Web Project  or Maven Based Project
+
+we can take a call we , based on the need, if we want to leverage the benefits of Maven we can create Maven Project for Hibernate alone or we can create a Simple Java Project
+
+but when we create Spring Projects
+we can again choose between 
+Dynamic Web Project or Maven Project or SpringBoot projects,
+
+you will be going through all 3 methods
+
+Hope that resolves your doubt.
+
+Thanks

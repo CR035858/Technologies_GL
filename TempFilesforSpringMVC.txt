@@ -1,0 +1,2 @@
+Could not delete C:/Training2020-21-22/CTS2021-22June03BatchSDET005/SDETJuneWeb/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/CRM1/WEB-INF/lib. May be locked by another process.
+Could not delete C:/Training2020-21-22/CTS2021-22June03BatchSDET005/SDETJuneWeb/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/CRM1/WEB-INF. May be locked by another process.

@@ -1,0 +1,10 @@
+SpringBOOT with JPA
+when data.sql is used to insert
+all other aspects
+[dependencies,codes are all ok]
+
+BUT GIVES LIBRARY not found(library is the entity)
+
+THEN USE THIS OPTION
+
+@SpringBootApplication(exclude={DataSourceAutoConfiguration.class})

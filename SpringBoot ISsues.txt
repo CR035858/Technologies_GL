@@ -1,0 +1,16 @@
+Changes done in
+1) Application.properties spelling mistakes paths
+2) @SpringBootApplication(scanBasePackages)  added
+3)  added taglib directive in JSPs
+4) Changed paths in jsps
+5) added the following in Controller
+@RequestMapping("/showFormForAdd")
+	public String showFormForAdd(Model theModel) {
+
+		// create model attribute to bind form data
+		Student theStudent = new Student();
+
+		theModel.addAttribute("Student", theStudent);
+
+		return "Student-form";
+	}

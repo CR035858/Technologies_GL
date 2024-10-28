@@ -1,0 +1,17 @@
+ONE TO MANY BI
+Student
+
+@OneToMany(mappedBy="student",cascade= {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.DETACH, CascadeType.REFRESH})
+private List <Course> courses;
+
+
+Course
+@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.DETACH, CascadeType.REFRESH})
+@JoinColumn(name="student_id")
+private Student student;
+----------
+Teacher
+
+
+
+Course

@@ -1,0 +1,12 @@
+But please note that all versions of  SpringMVC jars are not compatible with all Java
+Mine is native Java 1.8 and if your native is Java 17 and you create 1.8 from it, 
+It may not be compatible with Spring 5.0.2, you may have to use at least 5.3.0 
+
+You can download from the path given below
+
+https://repo.spring.io/ui/native/release/org/springframework/spring/
+
+
+
+Hope that resolves your issue
+If you stilll face any issues , please get back to us.

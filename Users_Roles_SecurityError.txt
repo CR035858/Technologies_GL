@@ -1,0 +1,9 @@
+When You Get 
+
+Users vs Roles
+1) Incompatible Type Errors for Joined Table
+2) Referenced Variable Name mismatch etc
+
+Please follow this Project:
+
+C:\GreatLearningOfficial\Academics\SupportTickets\Jan-2024\Jan-27\Venkataraman-417364\SecondProjectToCheck\College_Student_Registration_for_Debate

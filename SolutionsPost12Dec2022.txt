@@ -1,0 +1,99 @@
+SOLUTION S POST 12 Dec 2022
+
+1a) Working Simple HIbernate-Maven Project 
+C:\Training2020-21-22\BGreatLearning\Academic\StudentTicketSupport\Dec-2022\Dec-08-22\HetviPatel
+==================================================================================
+1) Hibernate Issue [Maven - ARchetype WebAPP 1.4 Project]
+Error :Even AFter Reaching The POOLSIZE limit, unable to establish connection
+
+CHANGED THE FOLLOWING [ ]
+TO
+
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.31</version>
+</dependency>
+
+in cfg.xml
+
+<!-- <property name="connection.pool_size">1</property> -->
+
+COMMENTED THE ABOVE LINE
+================================================================================
+2) a SIMPLE HELLO WORLD MAVEN PROJECT WORKING UNDER 1.8 also with 1.7 (java 17)
+Present under Dec
+
+C:\Training2020-21-22\BGreatLearning\Academic\StudentTicketSupport\Dec-2022\Dec-09-2022\Arkadyuti
+================================================================================
+
+2) MAVEN (maven-archetype-webapp 1.4 Project
+Error Java compiler can compile only upto 52 (DispatcherServlet with 62) etc.....
+
+Earlier used
+Spring 6.x.y
+Changed Spring Version to 5.3.2 
+OLD DEPENDENCY WHICH GAVE ERRORS COMMENTED
+ <!--  	<dependency>
+      		<groupId>org.springframework</groupId>
+      		<artifactId>spring-webmvc</artifactId>
+      		<version>6.0.2</version>
+    	</dependency> --> 
+
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+   <!--	<dependency>
+     		 <groupId>org.springframework</groupId>
+     		 <artifactId>spring-web</artifactId>
+     		 <version>6.0.2</version>
+    	</dependency>  --> 
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+NEW DEPENDENCY CHANGED TO WHICH WORKS FOR 
+	<dependency>
+	    	<groupId>org.springframework</groupId>
+	    	<artifactId>spring-webmvc</artifactId>
+	    	<version>5.3.2</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+	<dependency>
+	    	<groupId>org.springframework</groupId>
+	    	<artifactId>spring-web</artifactId>
+	    	<version>5.3.21</version>
+	</dependency>
+======================================================================================
+3
+
+Exception in thread "main" org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: com.glearning.hibernate.crud.model.Teacher.subjects[com.glearning.hibernate.crud.model.Subject]
+A) 	was
+	
+	 Subject(){
+		
+	}
+
+	instead of
+	public Subject(){
+		
+	}
+B) 	 IN
+sessionFactory = new Configuration()
+									.configure("hibernate-cfg.xml")
+									.addAnnotatedClass(Teacher.class)
+									.addAnnotatedClass(TeacherDetails.class)
+									.buildSessionFactory();
+
+ WAS MISSING THE FOLLOWING
+.addAnnotatedClass(Subject.class)
+
+
+C)
+/*@OneToMany(targetEntity = Subject.class,mappedBy = "subjects", fetch = FetchType.LAZY)
+	private List <Subject> subjects;*/
+	TO
+	@OneToMany(targetEntity = Subject.class,mappedBy = "teacher", fetch = FetchType.LAZY)
+	private List <Subject> subjects;
+===============================================================================================
+
+4)
+
+Exception in thread "main" org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.glearning.hibernate.crud.model.Subject.subjects in com.glearning.hibernate.crud.model.Teacher.subjects
+
+

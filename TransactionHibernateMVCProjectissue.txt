@@ -1,0 +1,10 @@
+You must enable the transaction support (<tx:annotation-driven> or @EnableTransactionManagement) and declare the transactionManager and it should work through the SessionFactory.
+
+You must add @Transactional into your @Repository
+
+With @Transactional in your @Repository Spring is able to apply transactional support into your repository.
+
+Your Student class has no the @javax.persistence.* annotations how @Entity, I am assuming the Mapping Configuration for that class has been defined through XML.
+
+
+https://stackoverflow.com/questions/26203446/spring-hibernate-could-not-obtain-transaction-synchronized-session-for-current

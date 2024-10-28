@@ -1,0 +1,3 @@
+Windows > Preferences > Install/Update > "Uninstall or update" link > Click stuff and hit the "Uninstall" button.
+
+Uninstalling Plugins from ECLIPSE

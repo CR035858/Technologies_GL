@@ -1,0 +1,23 @@
+1)HIBERNATE CRUD GOOD PROJECT -MavenProject  BYSTUDENT
+C:\Training2020-21-22\BGreatLearning\Academic\StudentTicketSupport\Dec-2022\Dec-10-2022\PritiJoshi\Hibernate-crud1-main\glearning-hibernate-crud-master
+
+2) Thymeleaf MVC without XML configuration
+C:\Training2020-21-22\BGreatLearning\Academic\StudentTicketSupport\Dec-2022\Dec-14-2022\SanskarSethiya\spring-simple-webapp-main\WebApp
+
+3) SPringMVC Swagger-H2 Related
+C:\Training2020-21-22\BGreatLearning\Academic\StudentTicketSupport\Sep2022\14-Sep-22\ArunJoseph\spring-boot-library-main\spring-boot-library-design
+
+4)SpringMVC-AOP
+C:\Training2020-21-22\BGreatLearning\Academic\SampleDemos\AOPBySTudentIssue\Spring-Aop-Doubt-main\spring-aop
+
+5) SpringBootCRUD+Thymeleaf
+C:\Training2020-21-22\BGreatLearning\Academic\StudentTicketSupport\Dec-2022\Dec-22-2022\Himanshu\DebugError-main\MentoringSession5_LibraryManagement
+
+6) Maven based MVC+CRUD using Hibernate JSP
+C:\Training2020-21-22\CTS2021-22June03BatchSDET005\SDETJuneWeb\zmavenmvchibernate
+
+------------------
+This may probably work just added as an additional project but need to check
+
+C:\Training2020-21-22\BGreatLearning\Academic\StudentTicketSupport\Nov2022\19-Nov-2022\ANilYadav\Practice_Project-main\StudentManagement
+

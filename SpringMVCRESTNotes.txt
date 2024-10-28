@@ -1,0 +1,49 @@
+Hi ANirudh.
+1) What is the use case of Spring MVC & Rest API. where will we use these two types of design?
+Spring MVC is an open source framework, which enables us to create MVC architecture style based apps.
+
+MVC is an architecture style - approach to create applications, which has several advantages over the traditional 3 tier architecture,
+MVC provides features like Dependency Injection, Segregation Of Concerns , Inversion Of Control & Aspect Oriented Programming,
+
+In short the apps created using MVC will be more modularized, easily maintainable & extensible   compared to the traditional 3 Tier Architecture.
+
+To create such apps we need a framework SpringMVC is open source framework, which is a one stop shop to create apps following MVC style - which enables to build
+Distributed Apps
+Web Apps
+Web Services
+etc.
+
+RestAPI is an implementation of Web Services, web services can be created using SOAP or REST, the webservices created using REST are usually called as RESTAPI
+
+2)  In Spring MVC we will use jsp or thymleaf as view technology but if we use Rest  API , which technology we will use for view ?
+
+
+In spring MVC , for the views we use JSP / Thymeleaf whereas Web Services are only providing services and webservices are specialized type of Web APPS which provide functionalities which can be invoked by other web applications 
+
+for example when you do shopping using FlipKart, many users may use different cards like ICICI,SBI or AXIS bank cards
+which have to be checked through the respective web apps like icici.com / sbi.com / axis. com etc
+
+flipkart might be created using Java for example this app has to interact with other web apps created using different technologies possobly java, .Net or PHP
+
+instead of FLIPKart directly taking the overhead to interact with other technology based apps - i.e which needs interoperability, it can depend upon web services like PAYMENT gateway which takes the responsibility of "Interoperability" , therefore web services provide absolute interoperability and act in between the applications.
+
+They exchange data / results in the form of JSON/XML which need to be processed further by FLIPKart for example and then generates html and gives it to end user, therefore since RESTAPI is a web service they need not be created with UI - JSP/Thymeleaf, byt when we create MVC based app it is a ful fledged application which needs UI
+
+RESTAPI when we create we can test using SWAGGER/POSTMAN
+
+Hope that resolves your doubt.
+
+Web Services are implementation of another Architectural style called SOA
+Service Oriented ARchitecture
+
+This style proposes a model where a request can be made from an application of any technology which can be handled and responded by a Service, therefore the Web APplication which provides responses to any application irrestpective of the technology is called as Web Service
+Web Services are implemented by either using SOAP or REST
+i.e the implementation of web services can be through
+1) SOAP
+2) REST
+
+SOAP is a modified version of HTTP which is very complaicated to use and which exchanges the data in XML or JSON format
+SOAP uses WSDL/WSML to descripe the WebService and uses Simple Object ACcess Protocol - modfiied version of HTTP
+
+whereas REST which is the acronym for Representational State Transfer uses the plain old HTTP to transfer the info across apps and which uses JSON/XML for the data exchange, which is more simpler and uses the inbuilt methods of HTTP requests such as GET/PUT/POST/DELETE
+for transactions

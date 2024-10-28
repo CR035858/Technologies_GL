@@ -1,0 +1,23 @@
+Student
+
+@OneToOne(cascade=CascadeType.ALL)
+@JoinColumn(name="address_id")
+private Address studentAddress;
+
+-----------------
+
+Address
+@OneToOne(mappedBy = "studentAddress",cascade = CascadeType.ALL)
+private Student student;
+
+
+
+------------------------------
+Teacher
+@OneToOne(cascade = CascadeType.ALL)
+@JoinColumn(name="techer_id)
+private TeacherDetails teacherDetails;
+----------------------------
+TeacherDetails
+@OneToOne(mappedBy ="teacherDetails",cascade=CascadeType.ALL)
+private Teacher teacher;

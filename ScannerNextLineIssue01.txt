@@ -1,0 +1,44 @@
+Use it this way
+
+----------------
+Scanner scan1 = new Scanner(System.in);
+		System.out.println("Enter String ");
+		String str1 = scan1.nextLine();
+
+		System.out.println("Enter String");
+		String str2 = scan1.next();
+		
+		
+		scan1.nextLine();
+
+		System.out.println("Enter String ");
+		String str3 = scan1.nextLine();
+		
+		
+		System.out.println(str1+" "+str2+" "+str3);
+
+---------------
+
+public class ScannerSample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan1 = new Scanner(System.in);
+		String str1,str2,str3;
+		
+		int num1, num2;
+		System.out.println("Enter a String ");
+		str1 = scan1.next();
+		System.out.println("Enter a Number ");
+		num1 = scan1.nextInt();
+		System.out.println("Enter a String ");
+		str2 =  scan1.next();
+		System.out.println("Enter a Number ");
+		num2 = scan1.nextInt();
+		scan1.nextLine();
+		System.out.println("Enter a String ");
+		str3 = scan1.nextLine();
+		System.out.println(str1+" "+str2+" "+str3+" "+num1+" "+num2 );
+	}
+
+}

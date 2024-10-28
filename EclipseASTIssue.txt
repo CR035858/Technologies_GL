@@ -1,0 +1,3 @@
+I tried updating eclipse from 2022-06 to 2022-12 by doing, Eclipse -> Help -> Check for updates. And I guess its working. So far, it hasn't popped up. I came across some threads, where some people faced this exact problem when installing spring tools. 
+I also tried to disabling Mark occurrences earlier, by doing Window -> Preferences -> Java -> Editor -> Mark Occurrences. (Uncheck, apply and close). That also worked but, it didn't look good. So I reverted it. 
+Anyways, Thank you for the tips. 

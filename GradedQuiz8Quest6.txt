@@ -1,0 +1,7 @@
+For the question 6 in Graded Quiz 8 only option 3 is correct...
+
+Option 4 will not be the right option , because it would print NULL and not the max value
+
+because while(root != null) it pushes itself to root.right until root is NULL then if you print it would print NULL
+
+Hope you got the logic

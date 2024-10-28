@@ -1,0 +1,21 @@
+@RequestMapping(value = "/accounts", method = RequestMethod.POST)
+ public String handle(Account account, BindingResult result, RedirectAttributes redirectAttrs) {
+   if (result.hasErrors()) {
+     return "accounts/new";
+   }
+   // Save account ...
+   redirectAttrs.addAttribute("id", account.getId()).addFlashAttribute("message", "Account created!");
+   return "redirect:/accounts/{id}";
+ }
+ 
+A RedirectAttributes model is empty when the method is called and is never used unless the method returns a redirect view name or a RedirectView.
+
+After the redirect, flash attributes are automatically added to the model of the controller that serves the target URL.
+
+
+This is the authentic documentation for the same
+
+https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/mvc/support/RedirectAttributes.html
+
+
+https://www.baeldung.com/spring-redirect-and-forward

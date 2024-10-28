@@ -1,0 +1,9 @@
+UserDetails is the Interface which helps in providing the USER details
+i.e provides info about USER
+
+where as UserDetailsService is like a service which loads the UserDetails for us from the DB using
+the REPOSITORY that we create for eg. userRepository
+
+---------------------
+
+Encoding is defined as the process of converting data from one form to another and has nothing to do with cryptography. It guarantees none of the 3 cryptographic properties of confidentiality, integrity, and authenticity because it involves no secret and is completely reversible.

@@ -1,0 +1,10 @@
+STEP 01:
+1) Create Project 2.6.10
+2) Include Actuator
+3) Comment:  spring.mvc.pathmatch.matching-strategy = ANT_PATH_MATCHER
+also
+UnComment and check
+
+
+STEP 02
+

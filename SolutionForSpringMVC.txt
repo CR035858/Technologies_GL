@@ -1,0 +1,9 @@
+Right Click the jsp file and then choose Option "Run On Server" ,
+
+If it gives Page Not found error, you have to enter the URL aptly in the browser's  address bar like
+
+http://localhost:8080/ProjectName/hello
+
+if your request mapping is /hello
+
+Hope that clarifies your issue

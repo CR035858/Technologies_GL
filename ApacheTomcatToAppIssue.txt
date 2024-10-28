@@ -1,0 +1,12 @@
+I am seeing that there is an error in the line No 1 in Home.jsp, 
+
+can you please manually add that Jar that it is asking for and then 
+
+first try running your Apache Tomcat without any app to make sure server is fine, if it is unable to run without application, then you may have to reconfigure your ApacheTomcat,
+if it is running fine, then we can check your Project.
+
+You can upload the COMPLETE project onto Github drive and share the link , I will check and update.
+
+please check with the above mentioned suggestions.
+
+Thanks

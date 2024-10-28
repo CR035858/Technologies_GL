@@ -1,0 +1,13 @@
+https://stackoverflow.com/questions/25283198/spring-boot-jpa-column-name-annotation-ignored
+
+https://stackoverflow.com/questions/28544541/jpa-column-with-incorrect-underscore?noredirect=1&lq=1
+
+
+spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+
+or
+
+
+spring.jpa.hibernate.naming.implicit-strategy=org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl

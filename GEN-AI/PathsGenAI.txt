@@ -1,0 +1,31 @@
+Experimented with the links below related to ECLIPSE
+
+https://www.techtarget.com/searchenterpriseai/definition/generative-AI
+
+
+https://www.techtarget.com/searchenterpriseai/tip/GitHub-Copilot-vs-ChatGPT-How-do-they-compare
+
+
+COPILOT usage intro demo Video: 
+
+INTELLIJ
+
+https://www.google.com/search?q=using+github++copilot+in+eclipse+videos&sca_esv=334a9bda33585e15&rlz=1C1CHZN_enIN1076IN1076&ei=pkl-Zo_CJfW7seMPse2huA0&ved=0ahUKEwiPrcr6x_2GAxX1XWwGHbF2CNcQ4dUDCBA&uact=5&oq=using+github++copilot+in+eclipse+videos&gs_lp=Egxnd3Mtd2l6LXNlcnAiJ3VzaW5nIGdpdGh1YiAgY29waWxvdCBpbiBlY2xpcHNlIHZpZGVvczIHECEYoAEYCjIHECEYoAEYCjIHECEYoAEYCkjqcFAAWL5tcAF4AZABAJgBpgKgAZMyqgEGMC4zOS4xuAEDyAEA-AEBmAIpoAKHM8ICFxAuGIAEGJECGLEDGNEDGIMBGMcBGIoFwgILEAAYgAQYkQIYigXCAgsQABiABBixAxiDAcICERAuGIAEGLEDGNEDGIMBGMcBwgIIEAAYgAQYsQPCAgUQLhiABMICCxAuGIAEGNEDGMcBwgImEC4YgAQYkQIYsQMY0QMYgwEYxwEYigUYlwUY3AQY3gQY4ATYAQHCAgoQABiABBhDGIoFwgIQEAAYgAQYsQMYQxiDARiKBcICCBAuGIAEGLEDwgIFEAAYgATCAhEQLhiABBjHARiYBRiOBRivAcICBhAAGBYYHsICCxAAGIAEGIYDGIoFwgIIEAAYgAQYogTCAgUQIRigAZgDALoGBggBEAEYFJIHBjEuMzguMqAHsvAB&sclient=gws-wiz-serp#fpstate=ive&vld=cid:33ffeec9,vid:q2dhnulEYFk,st:0
+
+
+Eclipse:
+1)
+
+https://www.google.com/search?q=github+copilot+for+eclipse&rlz=1C1CHZN_enIN1076IN1076&oq=github+copilot+for+&gs_lcrp=EgZjaHJvbWUqBwgCEAAYgAQyBwgAEAAYgAQyBwgBEAAYgAQyBwgCEAAYgAQyBwgDEAAYgAQyBwgEEAAYgAQyBggFEEUYOTIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIHCAkQABiABNIBCTgwMTZqMGoxNagCCLACAQ&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:21ea2157,vid:q2dhnulEYFk,st:0
+
+1a) WITH CHAT
+https://www.youtube.com/watch?v=cX_qOHPGAPU
+
+2) VSCODE
+
+https://www.google.com/search?q=Git+Copilot+for+eclipse&sca_esv=8d785069c21da656&rlz=1C1CHZN_enIN1076IN1076&biw=1366&bih=641&tbm=vid&ei=tKyPZpbdHv7bseMP37qfyAk&ved=0ahUKEwiWh5Xo3J6HAxX-bWwGHV_dB5kQ4dUDCA0&uact=5&oq=Git+Copilot+for+eclipse&gs_lp=Eg1nd3Mtd2l6LXZpZGVvIhdHaXQgQ29waWxvdCBmb3IgZWNsaXBzZTIFEAAYgAQyBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIIEAAYgAQYogQyCBAAGIAEGKIEMggQABiABBiiBEi6GlDnBFj1FHAAeACQAQCYAZUBoAHSC6oBBDIuMTG4AQPIAQD4AQGYAg2gAv8LwgIKEAAYgAQYQxiKBcICChAAGIAEGLEDGArCAgcQABiABBgKwgILEAAYgAQYhgMYigWYAwCIBgGSBwQwLjEzoAeUWQ&sclient=gws-wiz-video#fpstate=ive&vld=cid:6574fb54,vid:3sDn5UgakWo,st:0
+
+3)
+VSCode:
+
+https://www.youtube.com/watch?v=3sDn5UgakWo : 

@@ -1,0 +1,3 @@
+CoPilot For VSCode
+
+https://www.google.com/search?sca_esv=8d785069c21da656&rlz=1C1CHZN_enIN1076IN1076&q=Git+Copilot&tbm=vid&source=lnms&fbs=AEQNm0COtQ6qE5snXClm_cWqGTLXtyokgX4yHBibyXS4WWyUZ70wS7JVS1z8oFb1SxAyKGLLv-nyIWKcPYOXzmmjKO7YCSPVAKRc3xIPnwUAmWWvApctRsYQql_atuc44MFSXUirQxBYnzdvvKigXnnApKx4vrQm_zVlxpYDD9iWnT36HTbaDadSE1zl9BuT8xxAm8mzNQw8c-WS58QPXO96el_voBZ6WA&sa=X&ved=2ahUKEwjkwO_m3J6HAxU3TmwGHSkgBRoQ0pQJegQIFxAB&biw=1366&bih=641&dpr=1#fpstate=ive&vld=cid:6928ee52,vid:z1ycDvspv8U,st:0

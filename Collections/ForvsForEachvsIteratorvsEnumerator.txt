@@ -1,0 +1,22 @@
+
+for loop vs for each loop
+
+1) For primitive types
+for loop is faster than for each loop
+2) But For Collections
+ for each loop is faster than for loop
+
+for-each vs iterator in Collections
+
+fore-each will not allow modification - gives modificationnotallowed exception
+iterator will allow modification
+
+both are almost of same efficiencies
+
+--------
+Iterator vs Enumeration
+
+Enumeration - applicable only for legacy classes - hashtable/vector
+Iterator - applicable for modern collections
+Enumeration doesnot allow remove/modification
+Iterator allows the same. 

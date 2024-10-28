@@ -1,0 +1,31 @@
+
+NOTES
+QUEUE
+poll(): removes and retrieves the head of the queue. q. 
+peek(): does not remove but only retrieves/returns the head of the queue.
+The remove() and poll() methods differ only in their behavior when the queue is empty: 
+the remove() method throws an exception, while the poll() method returns null.
+
+
+
+
+
+STACK:
+public E pop()
+Removes the object at the top of this stack and returns that object as the value of this function.
+public E peek()
+Looks at the object at the top of this stack without removing it from the stack.
+empty() returns boolean
+
+
+Hashtable  - synchronized Thread safe
+HashMap - not synchronized
+TreeMap - keys are ordered not synchronized
+--------------------------------
+Collection
+Scanner
+-------
+DSA
+Stack using array
+Scanner
+LinkedList Node List

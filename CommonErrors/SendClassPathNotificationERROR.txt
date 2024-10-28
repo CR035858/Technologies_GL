@@ -1,0 +1,17 @@
+Send ClassPath Notification can be reolved with any of the following modifications based on the problem.
+
+Better approach is to try doing each step and check whether your issue is still persisting.
+
+Fix:1
+
+In most of the cases, quick restart of the STS or Eclipse will resolve the issue of continues Send ClassPath Notification
+
+Fix:2
+
+Updating the Version 4.2.2 to 4.2.1
+
+Fix:3
+
+Navigate to Windows => Preferences => Language Servers -> Spring Language Servers and try disabling them
+
+Reference : https://github.com/spring-projects/sts4/issues/218

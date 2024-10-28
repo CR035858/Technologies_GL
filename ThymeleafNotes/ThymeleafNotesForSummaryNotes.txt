@@ -1,0 +1,264 @@
+Thymeleaf is a Java-based server-side template engine that is used to create dynamic web pages. It allows developers to create HTML, XML, and text-based templates that can be rendered on the server side, and provides a powerful set of features for template processing and customization.
+
+Thymeleaf is often used in web development frameworks such as Spring, and it has become a popular choice for creating web applications because of its ease of use, flexibility, and its ability to handle complex templates with ease.
+
+Some of the key features of Thymeleaf include support for a wide range of template formats, including HTML, XML, and plain text, as well as support for internationalization, and the ability to integrate with a wide range of web frameworks and technologies.
+[Local Region + language]
+en-US------> Color  dd
+en-UK		Colour
+Overall, Thymeleaf provides developers with a powerful tool for creating dynamic, data-driven web pages that can be customized and adapted to meet the needs of a wide range of applications and use cases.
+
+Thymeleaf Templates
+Thymeleaf converts your files into well-formed XML files. It contains 6 types of templates as given below −
+
+XML
+Valid XML
+XHTML
+Valid XHTML
+HTML5
+Legacy HTML5
+All templates, except Legacy HTML5, are referring to well-formed valid XML files. Legacy HTML5 allows us to render the HTML5 tags in web page including not closed tags
+EXAMPLE:
+
+https://www.codejava.net/frameworks/spring-boot/spring-boot-thymeleaf-form-handling-tutorial
+
+
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+ 
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+        <scope>runtime</scope>
+        <optional>true</optional>
+    </dependency>
+</dependencies>
+
+As you can see, the spring-boot-starter-web dependency enables Java web application based on Spring MVC and running on embedded Tomcat server. The spring-boot-starter-thymeleaf is for integration between Spring MVC and Thymeleaf template engine.
+And the spring-boot-devtools dependency enables automatic restart and live reload features so whenever you make changes to the project, Spring Boot will automatically restart the application and refresh the browser – making your development experience more convenient.
+
+2. Code the Homepage
+We put Thymeleaf template files under the src/main/resources/templates directory. For the homepage of the application, create the index.html file with the following code:
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Spring Boot Form Demo</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Spring Boot Form Demo</h1>
+        <a href="/register">Click here to register</a>
+    </div>
+</body>
+</html>
+
+Now you can start your Spring Boot application and access the homepage in browser. It will look like this:
+
+3. Code Java Model Class
+To represent the information in the user registration form, create the User class with the following fields:
+
+package net.codejava;
+ 
+import java.sql.Date;
+ 
+public class User {
+    private String name;
+    private String email;
+    private String password;
+    private String gender;
+    private String note;
+    private boolean married;
+    private Date birthday;
+    private String profession;
+ 
+    // getters
+    // setters
+     
+    // override toString()
+ 
+}
+
+
+4. Code Spring MVC Controller Class
+Next, create a Spring MVC controller class with the first handler method that handles the requests to show the form:
+
+package net.codejava;
+ 
+import java.util.*;
+ 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+ 
+@Controller
+public class MainController {
+     
+    @GetMapping("/register")
+    public String showForm(Model model) {
+        User user = new User();
+        model.addAttribute("user", user);
+         
+        List<String> listProfession = Arrays.asList("Developer", "Tester", "Architect");
+        model.addAttribute("listProfession", listProfession);
+         
+        return "register_form";
+    }
+     
+}
+
+As you can see, the showForm() method handles the request /register when the user clicks the hyperlink in the homepage. It creates and puts two objects to the model:
+- A User object to represent the information in the form.
+- a List of profession that will be used to display a select box/dropdown list in the form.
+Then it returns view name register_form which will be resolved to a Thymeleaf template file.
+
+5. Code Thymeleaf Form
+Next, create the register_form.html file under src/main/resources/templates directory. To use Thymeleaf syntax, you should declare this XML namespace at the beginning of the document:
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+Use the HTML form tag mixed with Thymeleaf attributes as below:
+1
+<form action="#" th:action="@{/register}" method="post" th:object="${user}">
+As you can see, Thymeleaf uses th:xxx attributes inside HTML tags so it doesn’t break the structure of the page – unlike JSP and JSTL. So a Thymeleaf template file still looks like HTML in browser – very convenient for both designer and programmer.
+In Thymeleaf, hyperlink is wrapped inside @{} and access a model object inside ${}. Note that in this form tag, the th:object attribute points to the name of the model object sent from Spring MVC controller.
+Then for each form field, use the following code:
+
+Then for each form field, use the following code:
+1
+2
+<label>Full name:</label>
+<input type="text" th:field="*{name}" /><br/>
+The th:field attribute points to the field name of the object in the model. Field name is wrapped inside *{}.
+Below is the whole code of the user registration form:
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>User Registration</title>
+</head>
+<body>
+<div align="center">
+    <h1>User Registration</h1>
+    <form action="#" th:action="@{/register}" method="post" th:object="${user}">
+        <label>Full name:</label>
+        <input type="text" th:field="*{name}" /><br/>
+ 
+        <label>E-mail:</label>
+        <input type="text" th:field="*{email}" /><br/>
+ 
+        <label>Password:</label>
+        <input type="password" th:field="*{password}" /><br/>
+ 
+        <label>Birthday (yyyy-mm-dd):</label>
+        <input type="text" th:field="*{birthday}" /><br/>
+ 
+        <label>Gender:</label>
+        <input type="radio" th:field="*{gender}" value="Male" />Male
+        <input type="radio" th:field="*{gender}" value="Female" />Female<br/>
+ 
+        <label>Profession:</label>
+        <select th:field="*{profession}">
+            <option th:each="p : ${listProfession}" th:value="${p}" th:text="${p}" />
+        </select>
+        <br/>
+ 
+        <label>Married?</label>
+        <input type="checkbox" th:field="*{married}" /><br/>
+ 
+        <label>Note:</label>
+        <textarea rows="5" cols="25" th:field="*{note}"></textarea>
+        <br/>
+ 
+        <button type="submit">Register</button>    
+    </form>
+</div>
+</body>
+</html>
+
+Note that the code for the HTML select/option tags to display a dropdown list, with values taken from a model object sent from the controller:
+
+<label>Profession:</label>
+<select th:field="*{profession}">
+    <option th:each="p : ${listProfession}" th:value="${p}" th:text="${p}" />
+</select>
+Here, we use the th:each attribute to iterate over elements in a collection; th:value attribute to set value and th:text to set text for the HTML option tag.
+And to format the form, put the following CSS code inside the head section of the page:
+
+
+<style type="text/css">
+    label {
+        display: inline-block;
+        width: 200px;
+        margin: 5px;
+        text-align: left;
+    }
+    input[type=text], input[type=password], select {
+        display: inline-block;
+        width: 200px;
+    }
+    input[type=radio] {
+        margin-left: 45px;
+    }
+    input[type=checkbox] {
+        margin-right: 190px;
+    }  
+    button {
+        padding: 5px;
+        margin: 10px;
+    }
+</style>
+When running, the form looks neat like this:
+
+6. Handle Form Submission
+When the user clicks on Register button on the form, an HTTP POST request will be sent to the relative URL /register, so we need to code the handler method in the controller class as follows:
+
+@PostMapping("/register")
+public String submitForm(@ModelAttribute("user") User user) {
+    System.out.println(user);
+    return "register_success";
+}
+You see, handling form submission with Spring MVC is very simple and easy – just use the @ModelAttribute annotation – then it will read form data and set the values to fields of the model object. So in the method we can print the user object. No need to write code to get form data.
+And this handler method returns a view name register_success which resolves to a Thymeleaf template file as described in the next section.
+
+7. Code Thymeleaf Result Page
+Create the register_success.html file with the following code:
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Success</title>
+<style type="text/css">
+    span {
+        display: inline-block;
+        width: 200px;
+        text-align: left;
+    }
+</style>
+</head>
+<body>
+<div align="center">
+    <h2>Registration Succeeded!</h2>
+    <span>Full name:</span><span th:text="${user.name}"></span><br/>
+    <span>E-mail:</span><span th:text="${user.email}"></span><br/>
+    <span>Password:</span><span th:text="${user.password}"></span><br/>
+    <span>Gender:</span><span th:text="${user.gender}"></span><br/>
+    <span>Profession:</span><span th:text="${user.profession}"></span><br/>
+    <span>Married?</span><span th:text="${user.married}"></span><br/>
+    <span>Note:</span><span th:text="${user.note}"></span><br/>
+</div>
+</body>
+</html>
+
+In this page, we use Thymeleaf attribute th:text to set text for the HTML span element. The user object is still available in the model so we can access it. When running, it displays the details of the user – which is the information submitted by the user in the form:

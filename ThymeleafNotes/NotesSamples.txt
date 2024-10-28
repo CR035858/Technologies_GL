@@ -1,0 +1,133 @@
+XMLNAMESPACE -------> [www.thymeleaf.org]
+
+xmlns=xs:www.skjask.xyz.xsd
+
+
+xs:bean
+th:object
+
+
+
+--------------
+xmlns : th = "www.thymeleaf.org"
+
+th:field
+th:object
+th:value
+th:action
+th:text
+
+<form action="/myproj/employees/add"   modelAttribute="employee"
+<input type="text" path="empName" />
+VS
+
+<form th:action="@{/employees/add}" th:object=${employee}
+<input type="text" th:field="*{empName}" />
+<span th:text=${message}></span>
+
+Male<input type="radio" th:field="*{gender}" value="male" />
+FeMale<input type="radio" th:field="*{gender}" value="male" />
+------------------
+span inline
+div block
+span
+{
+display:block
+}
+Controller
+
+@Controller
+class MyController
+{
+	public String sayHello(Model model)
+	{
+		String mygreeting = "Welcome to Maven Based Project with Thymeleaf";
+		model.addAttribute("greetings",mygreeting);
+		return "welcome"
+
+	}
+
+
+}
+=============================
+JSP					
+JSTL taglibraries forms
+<h1>${greetings}</h1>			
+					
+
+<form action="/products/list" modelAttribute="login>">
+
+<input type="text" path="loginId"
+
+<form action="/products/list" modelAttribute="employee>">
+Male <input type="radio" th:value="Male" th:field="gender" />
+
+</form>
+
+=====================================================
+
+
+THYMELEAF
+<h1 th:text="${greetings}"></h1>
+<img src="" />	
+
+
+<form th:action="@{/products/list}" th:object="${login}>">
+
+Male <input type="radio" value="Male" path="gender" />
+</form>
+
+------------------------------------------			
+----------------------------------------
+---------------------------------------
+Next, create the register_form.html file under src/main/resources/templates directory. To use Thymeleaf syntax, you should declare this XML namespace at the beginning of the document:
+1
+2
+3
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+---------------------------------
+For eg. in JSP 
+<%@ taglib uri="xyz.tld" prefix="c" %@>
+<c:myTag>
+
+</c:myTag>
+
+JSTL
+c:for-Each
+--------------------------------
+class MyTagClass
+{
+doStartTag()
+
+doEndTag()
+}
+
+------
+tld
+<tagName>myTag
+<tag-Class>MyTagClass
+
+-----------
+
+
+
+
+------------------
+<head>
+Use the HTML form tag mixed with Thymeleaf attributes as below:
+1
+<form action="#" th:action="@{/register}" method="post" th:object="${user}">
+As you can see, Thymeleaf uses th:xxx attributes inside HTML tags so it doesn’t break the structure of the page – unlike JSP and JSTL. So a Thymeleaf template file still looks like HTML in browser – very convenient for both designer and programmer.
+In Thymeleaf, hyperlink is wrapped inside @{} and access a model object inside ${}. Note that in this form tag, the th:object attribute points to the name of the model object sent from Spring MVC controller.
+Then for each form field, use the following code:
+1
+2
+<label>Full name:</label>
+<input type="text" th:field="*{name}" /><br/>
+The th:field attribute points to the field name of the object in the model. Field name is wrapped inside *{}.
+Below is the whole code of the user registration form:
+
+
+ANNOTATION - @Bean
+XML based - xyz-servlet.xml

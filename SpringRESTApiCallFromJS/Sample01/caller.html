@@ -1,0 +1,51 @@
+<html>
+<head>
+<script>
+//const apiUrl = 'https://api.example.com/submit';
+const apiUrl = 'http://localhost:8080/ccreps/allCCReps';
+const contactForm = document.getElementById('contact-form');
+const responseMessage = document.getElementById('response-message');
+
+contactForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const formData = new FormData(contactForm);
+
+  const requestOptions = {
+    method: 'POST',
+    body: formData,
+  };
+
+  fetch(apiUrl, requestOptions)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.text();
+    })
+    .then(data => {
+      responseMessage.textContent = data;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+});
+</script>
+
+</head>
+<body>
+<form id="contact-form">
+<!--  <input type="text" name="name" placeholder="Name">
+  <input type="email" name="email" placeholder="Email">
+  <textarea name="message" placeholder="Message"></textarea> -->
+  <input type="text" name="firstName" placeholder="FirstName">
+  <input type="text" name="lastName" placeholder="LastName">
+  <input type="text" name="address" placeholder="Address">
+  <input type="text" name="department" placeholder="Department">
+  <input type="text" name="designation" placeholder="Designation">
+  <textarea name="message" placeholder="Message"></textarea>
+  <button type="submit">Submit</button>
+</form>
+<div id="response-message"></div>
+</body>
+</html>

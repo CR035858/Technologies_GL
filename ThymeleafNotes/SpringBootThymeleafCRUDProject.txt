@@ -1,0 +1,1 @@
+https://www.google.com/search?q=simple+spring+Boot+project+with+thymeleaf&rlz=1C1CHBF_enIN928IN928&source=lnms&tbm=vid&sa=X&ved=2ahUKEwiypeu7y4_8AhXS8DgGHfUSDK0Q_AUoAXoECAEQAw&biw=1536&bih=754&dpr=1.25#fpstate=ive&vld=cid:c9c9a3fc,vid:_5sAmaRJd2c

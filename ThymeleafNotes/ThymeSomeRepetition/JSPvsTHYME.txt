@@ -1,0 +1,7 @@
+JSP vs Thymeleaf
+
+https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#web.servlet.embedded-container.jsp-limitations
+
+https://www.learn-it-with-examples.com/development/java/thymeleaf/thymeleaf-vs-jsp.html
+
+https://www.javaguides.net/2020/11/jsp-vs-thymeleaf-support-in-spring-boot.html

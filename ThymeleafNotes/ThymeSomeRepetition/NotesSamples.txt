@@ -1,0 +1,30 @@
+th:field
+th:object
+th:value
+th:action
+th:text
+------------
+th:action="@{/register}"
+th:field="*{name}"
+th:object="${user}"
+---------------------------------------
+Next, create the register_form.html file under src/main/resources/templates directory. To use Thymeleaf syntax, you should declare this XML namespace at the beginning of the document:
+1
+2
+3
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+Use the HTML form tag mixed with Thymeleaf attributes as below:
+1
+<form action="#" th:action="@{/register}" method="post" th:object="${user}">
+As you can see, Thymeleaf uses th:xxx attributes inside HTML tags so it doesn’t break the structure of the page – unlike JSP and JSTL. So a Thymeleaf template file still looks like HTML in browser – very convenient for both designer and programmer.
+In Thymeleaf, hyperlink is wrapped inside @{} and access a model object inside ${}. Note that in this form tag, the th:object attribute points to the name of the model object sent from Spring MVC controller.
+Then for each form field, use the following code:
+1
+2
+<label>Full name:</label>
+<input type="text" th:field="*{name}" /><br/>
+The th:field attribute points to the field name of the object in the model. Field name is wrapped inside *{}.
+Below is the whole code of the user registration form:
+

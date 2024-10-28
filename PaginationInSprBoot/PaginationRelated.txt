@@ -1,0 +1,64 @@
+Logging Tools:
+Log4j / Log4J2 /logBack(Improved version of Log4J) / SLF4J / JBoss Logging
+LOGGING LEVELS
+
+ERROR: Denotes that something failed, and the application might not be able to continue running.
+WARN: Indicates a potential problem that might not immediately affect functionality but warrants attention.
+INFO: Provides general information about the application’s operation. Typically used to confirm things are working as expected.
+DEBUG: Offers detailed insights for developers to diagnose issues or understand the flow.
+TRACE: Gives more granular details than DEBUG, often including iterative or repetitive processes.
+application.properties
+
+logging.level.org.springframework.web=DEBUG
+logging.level.com.myapp.service=INFO
+
+logging.file.name=myapp.log
+
+logging.file.max-size=10MB
+logging.file.max-history=10
+
+/app/health/info [profiles]
+
+
+
+
+
+================================================
+
+JpaRepository vs CRUDRepository
+
+JpaRepository implements PagingAndSortingRepository extends CrudRespository
+
+Pagination I guess you understand is a facility allowed when we deal with data that has numerous records more than a Page full.
+
+
+SpringBoot provides this feature, through the interfaces and classes
+[Pageable, PageRequest, Page]
+
+Pageable is an interface which helps in defining a request for a specific page
+
+PageRequest is an implementation of Pageable containing, information on which page is to be requested
+How many records per page, sorting order etc
+
+Page is a chunk of results/records
+
+When we say PageRequest.of(1,3) we are asking for 3 records from 1 using PageRequest and this 
+Object Reference is held in "Pageable"
+0,1,2,3.....
+		Pageable first3records = PageRequest.of(1, 3);
+		return readRepository.findAll(first3records);
+
+When we pass this Objectfor example first3Records(Pageable) containing info on what pages to be retrieved
+it will fetch data from our Repository's findAll method based on our Pagination rule
+findAll fetches all records from which we filter based on the rule defined in Pageable
+i.e first 3 records
+
+Hope you got this.
+
+for more information you can go through these links
+
+
+https://springhow.com/pagination-and-sorting-in-spring-jpa/
+https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/domain/PageRequest.html
+============================
+

@@ -1,0 +1,11 @@
+https://www.javatpoint.com/spring-boot-thymeleaf-view
+
+
+https://www.baeldung.com/thymeleaf-in-spring-mvc
+
+Currently Using
+https://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html
+
+
+https://www.thymeleaf.org/doc/articles/thvsjsp.html
+

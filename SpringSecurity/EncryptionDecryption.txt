@@ -1,0 +1,14 @@
+https://bcrypt-generator.com/
+
+users
+
+
+roles
+role_id int primary key auto_increment
+name varchar(50)
+1 ADMIN
+2 USER
+
+
+(scanBasePackages = {"com.studentcrud.operation.*"})
+

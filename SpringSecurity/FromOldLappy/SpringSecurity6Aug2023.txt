@@ -1,0 +1,12 @@
+DAILY CODE BUFFER
+
+
+
+
+Spring Security OAUTH2 good demo
+https://www.youtube.com/watch?v=MOCeQYbQPPU
+https://www.youtube.com/watch?v=MOCeQYbQPPU
+
+Java Brains
+JWT Token Based Security
+https://www.youtube.com/watch?v=X80nJ5T7YpE&t=45s

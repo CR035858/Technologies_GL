@@ -1,0 +1,178 @@
+AGENDA
+1) Understanding Spring Security[Completed]
+2) Problem Statement[Completed]
+3) Walkthrough TheDemo - Functionalities / Project Behaviour Expected in Graded Assignment[Completed]
+4) Walkthrough the Code - SetUP
+5) SetUP - skeleton I may not put the complete Code
+-------------------------------------------- 
+https://spring.io/guides/topicals/spring-security-architecture
+
+
+https://spring.io/guides/topicals/spring-security-architecture
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+[Authentication / Authorization][SpringSecurityAPI]
+------------------------------------------
+UserName------ Role
+1000 access 
+[App-security] server-security] os firewalls]
+-----------------------------------------------------------------------
+LDAP-API
+OAUTH - OAUTH
+ACTIVE DIRECTORY SERVICeS- WINDOWS
+-------------------------------------------------------------------------------------------------
+Users -[One-Many]
+UserId UserName UserPsswd  user1  user2
+UserId UserName Password
+1          user1          password1
+2           user2         password2       
+
+Roles
+RoleId Role [ADMIN (create/delete/update/fetch), USER(create/fetch)]]
+RoleId	RoleName
+1	ADMIN
+2              USER
+1              POWERUSER
+
+User_Roles
+uId roleid
+1     1
+2    2
+---
+-----
+----------------------------------------------------------SPRING SECURITY---------------------------------------------------------------------------
+[AuthenticationManager][interface
+ProviderManager[implementation]
+				AuthenticationProvider - For Our Project
+[AuthenticationManagerBuilder]
+----------------------------
+UserDetails     -----> _Interface [User & Roles]
+UserDetailsService ----->_ Interface [Load User ]   [userid/password]
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------
+Overview of Security Methods
+A security policy must be able to prevent sensitive information from being modified or retrieved by unauthorized users, but easy enough to administer.
+
+Directory Server Enterprise Edition provides the following security methods:
+
+Authentication. Provides a means for one party to verify another’s identity. For example, a client gives a password to Directory Server during an LDAP bind operation. As part of the authentication process, password policies define the criteria that a password must satisfy to be considered valid, for example, age, length, and syntax. Account inactivation disables a user account, group of accounts, or an entire domain so that all authentication attempts are automatically rejected.
+
+Encryption. Protects the privacy of information. When data is encrypted, the data is scrambled in a way that only the recipient can decode. The Secure Sockets Layer (SSL) maintains data integrity by encrypting information in transit. If encryption and message digests are applied to the information being sent, the recipient can determine that the information was not tampered with during transit. Attribute encryption maintains data integrity by encrypting stored information.
+
+Access control. Tailors the access rights that are granted to different directory users, and provides a means of specifying required credentials or bind attributes.
+
+Auditing. Enables you to determine if the security of your directory has been compromised. For example, you can audit the log files maintained by your directory.
+
+These security tools can be used in combination in your security design. You can also use other features of the directory, such as replication and data distribution, to support your security design.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Spring Security provides some configuration helpers to quickly get common authentication manager features set up in your application. The most commonly used helper is the AuthenticationManagerBuilder, which is great for setting up in-memory, JDBC, or LDAP user details or for adding a custom UserDetailsService. The following example shows an application that configures the global (parent) AuthenticationManager:
+
+--------------------------------[Configuration  implementing WebSecurityConfigurerAdapter
+	@Bean
+	public UserDetailsService userDetailsService() {
+		return new UserDetailsServiceImpl();
+	}
+
+//	 @Bean
+//	    public HttpSessionStrategy httpSessionStrategy() {
+//	        return new HeaderHttpSessionStrategy();
+//	    }
+
+	@Bean
+	public BCryptPasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
+
+	@Bean
+	public AuthenticationManager authenticationManagerBean() throws Exception {
+		return super.authenticationManagerBean();
+	}
+
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.userDetailsService(userDetailsService()).passwordEncoder(passwordEncoder());
+	}
+
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http.authorizeRequests().antMatchers("/api/user", "/api/role").hasAuthority("ADMIN")
+				.antMatchers(HttpMethod.POST, "/api/employees").hasAuthority("ADMIN")
+				.antMatchers(HttpMethod.PUT, "/api/employees").hasAuthority("ADMIN")
+				.antMatchers(HttpMethod.DELETE, "/api/employees/*").hasAuthority("ADMIN")
+				/*
+				 * .antMatchers(HttpMethod.POST, "/api/employees").hasAuthority("USER")
+				.antMatchers(HttpMethod.GET, "/api/employees/*").hasAuthority("USER")
+				 */
+				// .antMatchers("/api/e","/student/delete").hasAuthority("ADMIN")
+				.anyRequest().authenticated().and().httpBasic()
+//	            .formLogin().loginProcessingUrl("/login").successForwardUrl("/student/list").permitAll()
+//	            .and()
+//	            .logout().logoutSuccessUrl("/login").permitAll()
+//	            .and()
+//	            .exceptionHandling().accessDeniedPage("/student/403")
+				.and().cors().and().csrf().disable();
+	}
+------------------------------------------------------------------------------------------------------------------
+
+FLIPKART] webapp------------------[security-PaymentGateway-restful]
+| -UI[request]-Login
+Browser
+
+---------------------
+RestFulService<---------------------[POSTMAN/SWAGGER] [WebApp]
+			[AUthorization]
+
+
+
+Cross-Origin Resource Sharing (CORS) -
+Cross Site Request Forgery (CSRF) -
+
+--------------------------------------------------------------------------------------------------------------------
+DomainUserDetails
+public class MyUserDetails implements org.springframework.security.core.userdetails.UserDetails {
+
+    private User user;
+    
+    public MyUserDetails(User user) {
+        this.user = user;
+    }
+ 
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        List<Role> roles = user.getRoles();
+        List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+         
+        for (Role role : roles) {
+            authorities.add(new SimpleGrantedAuthority(role.getName())); // user1-(ADMIN/USER)  user2-(USER)
+        }
+         
+        return authorities;
+    }
+ --------------------------------------------------------------------------------------------------------------------
+	DomainUserDetailsServiceImpl  implements UserDetailsService
+public class UserDetailsServiceImpl implements UserDetailsService {
+
+	@Autowired
+	private UserRepository userRepository;
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		User user = userRepository.getUserByUsername(username);
+[UserId Password UserName]
+		if (user == null) {
+			throw new UsernameNotFoundException("Could not find user");
+		}
+
+		return new MyUserDetails(user);
+	}
+
+}
+-----------------------------------------------------------------------------------------------------------------
+
+class User
+{
+	userId,userName,password
+	Set <Role> roles
+	@OneToMany
+
+}

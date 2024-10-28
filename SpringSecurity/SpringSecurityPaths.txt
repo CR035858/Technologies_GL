@@ -1,0 +1,14 @@
+https://spring.io/guides/gs/securing-web/
+
+https://docs.spring.io/spring-security/reference/index.html
+
+
+SPRING SECURITY IN SIMPLE TERMS:
+
+https://medium.com/@aprayush20/understanding-spring-security-authentication-flow-f9bb545bd77#:~:text=Spring%20Security%20is%20a%20powerful,which%20are%20used%20in%20authentication.
+
+
+https://medium.com/@dan.r.mclain/spring-security-explained-in-simple-terms-d55e1a415e76
+
+https://www.baeldung.com/security-spring
+

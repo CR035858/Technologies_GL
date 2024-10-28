@@ -1,0 +1,35 @@
+property	
+		yield()	join()	sleep()
+purpose	If a thread wants to pass its execution to give chance to remaining threads of same priority then we should go for yield()	If a thread wants to wait until completing of some other thread then we should go for join()	If a thread does not want to perform any operation for a particular amount of time, then it goes for sleep()
+
+Is it overloaded?NO	YES	YES
+Is it final?	NO	YES	NO
+Is it throws?	NO	YES	YES
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+yield vs join
+https://www.geeksforgeeks.org/comparison-yield-join-sleep-java/

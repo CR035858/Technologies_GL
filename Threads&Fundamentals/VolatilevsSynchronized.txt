@@ -1,0 +1,19 @@
+Synchronized
+-- methods & blocks Not for variables & for classes
+Volatile 
+-- for variables
+   JVM creates a separate local copy
+   when multiple threads access it is changed in the local copy
+
+If a value of a variable keeps on changing by multiple threads then there may be a chance of a data inconsistency problem. 
+We can solve this problem by using an atomic variable. 
+
+Synchronized											Volatile
+
+i)Synchronized is applicable only on blocks or methods.			Volatile is applicable to variables only.
+ii)The synchronized modifier is used to implement a 
+lock-based concurrent algorithm, i.e 
+it suffers from the limitation of locking.				Whereas Volatile gives the power to implement a non-blocking algorithm that is more scalable.
+iii)The performance is relatively low compared to the volatile and 
+atomic keywords due to the acquisition and release of the lock.		The performance is relatively higher than that of the synchronized keyword.
+iv)Variables used inside the synchronized method or block are cached.	Volatile variables are not cached.

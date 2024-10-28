@@ -1,0 +1,14 @@
+.element {
+    width: 250px;
+    height: 250px;
+    background-color: rgba(255, 255, 255, 1);
+    color: #000;
+    border-radius: 10px;
+    box-shadow: 0px 19px 38px 0px rgba(0,0,0,0.3);
+  }
+
+https://www.rapidtables.com/web/color/RGB_Color.html
+
+
+https://htmlcssfreebies.com/box-shadow-generator/
+

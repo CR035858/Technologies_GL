@@ -1,0 +1,36 @@
+IIFE to find the sum of array elements:
+var sumarr = (
+function sum(x) 
+{ 
+    var sumt = 0;
+    for (var i = 0; i < x.length; i++) 
+    sumt += x[i]; 
+  
+  return sumt; 
+  } 
+  )(x = [10,20,30]);
+console.log(sumarr);
+---------------------------------------
+// wrap()
+function initCaps(myString)
+{
+    var fString=myString.charAt(0);
+    var lString=myString.substr(1);
+    var fString=fString.toUpperCase();//H
+    var lString=lString.toLowerCase();//ello
+    myString = fString+lString;
+    return myString;
+}
+IIFE to Concatenate String s which use s predefined function
+initCaps to initializeCap every String (i.e first character of a string to be capitialized)
+var concatMyStr =(
+function concatStr(str1,str2)
+{
+    return initCaps(str1) + initCaps(str2);
+})(str1="hello",str2="world");
+console.log(concatMyStr);
+
+-------------------------------------------------------
+
+
+Hope that serves your purpose

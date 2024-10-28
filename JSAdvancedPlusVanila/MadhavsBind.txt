@@ -1,0 +1,26 @@
+var arr =[10,20];
+function calculate(a, b, operation) {
+   // return operation.bind(null, arr);
+     var result = operation.bind(arr);
+     return result(arr[0],arr[1]);
+}
+
+function addition(a, b) {
+    return a + b;node 
+}
+
+function subtraction(a, b) {
+    return a - b;
+}
+
+function multiplication(a, b) {
+    return a * b;
+}
+
+function division(a, b) {
+    return a / b;
+}
+console.log(calculate(arr[0], arr[1], addition));         // Output: 8
+console.log(calculate(arr[0], arr[1], subtraction));      // Output: 2
+console.log(calculate(arr[0], arr[1], multiplication));      // Output: 15
+console.log(calculate(arr[0], arr[1], division));

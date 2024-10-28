@@ -1,0 +1,27 @@
+
+From Google
+1. Introduction to Generative AI : https://lnkd.in/dbnBXPYq
+2. Introduction to Large Language Models : https://lnkd.in/dcb9iuUP
+3. Introduction to Responsible AI : https://lnkd.in/dDsYmxwf
+4. Introduction to Image Generation : https://lnkd.in/d5GGMEdz
+5. Encoder-Decoder Architecture : https://lnkd.in/dECQGCEU
+6. Create Image Captioning Models : https://lnkd.in/dQYqif7T
+7. Introduction to GEN AI Studio : https://lnkd.in/dRxuhBaH
+
+From IBM
+1. Introduction to Artificial Intelligence : https://lnkd.in/evKx9yUR
+2. Gen AI : Prompt Engineering Basics : https://lnkd.in/edkHbGxt
+3. Intro to AI : https://lnkd.in/evKx9yUR
+4. Generative AI: Foundation Models and Platforms : https://lnkd.in/evmMiJy5
+
+From Deep learning
+1. Generative AI With LLMs : https://lnkd.in/dEjN9PRm
+2. Generative AI for Everyone : https://lnkd.in/g3KtK8vw
+3. Finetuning Large Language Models : https://lnkd.in/gt8BJack
+4. How Diffusion Models Work : https://lnkd.in/g_K_Sn2E
+
+From Top Universities
+1. Generative AI for Leaders : https://lnkd.in/gzK9W2VC
+2. Prompt Engineering for ChatGPT : https://lnkd.in/d-rCb-AM
+3. Introduction to Generative AI : https://lnkd.in/gVG-Y64C
+4. Generative AI Primer : https://lnkd.in/dZ7VJpcN

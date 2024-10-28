@@ -1,0 +1,236 @@
+REFER VIDEOS FOR MORE CLARITY
+Selection Sort Big Oh Notation derivation
+https://www.google.com/search?q=Selection+Sort+Big+O+notation+derivation&sca_esv=570580370&rlz=1C1CHZN_enIN1076IN1076&tbm=vid&source=lnms&sa=X&ved=2ahUKEwi-rsik2duBAxUTaPUHHUqaBzIQ_AUoAnoECAMQBA&biw=1366&bih=651&dpr=1#fpstate=ive&vld=cid:e47107fd,vid:PhNlp_q7mQk,st:0
+
+Binary Search Big Oh Notation derivation
+https://www.youtube.com/watch?v=TomQQb2kJvc
+
+Single processor 
+32 bit 
+Sequential execution 
+1 unit time for arithmetic and logical operations 
+1 unit time for assignment and return statements 
+
+void bubbleSort(int arr[], int n)
+{
+    int i, j;
+    for (i = 0; i < n-1; i++)    
+     
+    // Last i elements are already in place
+    for (j = 0; j < n-i-1; j++)
+        if (arr[j] > arr[j+1])
+            swap(arr[j], arr[j+1]);
+}
+Selection sort  O[n power 2]
+Bubble Sort   O [n power 2]   nsquare
+-------------------------
+SELECTION SORT
+6 7 8 5 4-size 5
+
+Iter1  
+	6  [7 8 5 4]
+        4 7 8 5 6
+Iter 2  
+	[4] [ 7 8 5 6]
+	4  [5  8   7  6]
+Iter 3
+	4  5 [ 8  7  6]
+	4  5 [ 6  7   8]
+Iter 4
+	4 5 6 [7 8 ]
+	4 5 6 [7 8]
+--------------------------------------
+
+SELECTION SORT
+void swap(int xp, int yp) 
+{ 
+    int temp = xp; 
+    xp = yp; 
+    yp = temp; 
+} 
+  
+void selectionSort(int arr[], int n) 
+{ 
+    int i, j, min_idx; 
+  
+    // One by one move boundary of unsorted subarray 
+    for (i = 0; i < n-1; i++) 
+    { 
+        // Find the minimum element in unsorted array 
+        min_idx = i; 
+        for (j = i+1; j < n; j++) 
+        if (arr[j] < arr[min_idx]) 
+            min_idx = j; 
+  
+        // Swap the found minimum element with the first element 
+        swap(arr[min_idx], arr[i]); 
+    } 
+} 
+  
+/* Function to print an array */
+void printArray(int arr[], int size) 
+{ 
+    int i; 
+    for (i=0; i < size; i++) 
+        cout << arr[i] << " "; 
+    cout << endl; 
+} 
+  
+// Driver program to test above functions 
+int main() 
+{ 
+    int arr[] = {64, 25, 12, 22, 11}; 
+    int n = sizeof(arr)/sizeof(arr[0]); 
+    selectionSort(arr, n); 
+    cout << "Sorted array: \n"; 
+    printArray(arr, n); 
+    return 0; 
+} 
+-------------------------------------COMPLEXITY
+ int temp = sortArr[minIndex]  [ 45,23,20,12,6]
+sortArr[minIndex] = sortArr[i];
+sortArr[i] = temp;
+
+void selectionSort(int arr[], int n) 
+{ 
+    int i, j, min_idx;   [1,1,1]
+  
+    // One by one move boundary of unsorted subarray 
+    for (i = 0; i < n-1; i++)   //initialization 1 + (n-1+1) + (n-1)---> 2N
+    { 
+        // Find the minimum element in unsorted array 
+        min_idx = i; -------------------------------1 (N-1) times
+        for (j = i+1; j < n; j++)                  --- 1(N-1) initialization + (x+1)condition + x(increment) times
+        if (arr[j] < arr[min_idx])                  3 X times (2 index assignment and 1 comparison)
+            min_idx = j;                                 X times
+  
+        // Swap the found minimum element with the first element 
+       	 int temp = sortArr[minIndex] 2 x
+	sortArr[minIndex] = sortArr[i]; 2 x
+	sortArr[i] = temp; 2 x
+    } 
+}  return 1
+----------------------
+  i loop
+N =5 i < 5-1=4
+i  0 to 3 - 4 times
+N=5 ,loop executes n-1 times
+
+J Loop
+   j i+ < 5
+i
+0 1 2 3 4  4
+1 2 3 4     3
+2 3 4        2
+3 4           1
+
+STATMENT Y : 1 + 2 + 3 ..... (N-1) -- X
+---------------------------------
+T(N) = 1+ 1+2N+N-1+N-1 + X+1 +x +3X +x + 2(N-1) + 2(N-1)+2(N-1) +1------------>[  3N+N+X+1+X +2N-2 +2N-2 +1]
+
+T(N) = 6x + 10N -4
+
+ =  
+X is basically-->  1 + 2 +3 ..... N-1 AS IN STATEMENT Y
+
+A.P   ---- 1 + 2+3 ..... K  sum = K(K+1)/2 [as per arithmetic progression]
+
+	1 + 2+ 3+......N-1 ==== >   N-1(N-1+1) /  2  [substituting k as N
+
+
+-----------> N(N-1) / 2
+
+            6(N square - N) / 2
+------->3N square - 3N + 10N -4
+influence the growth of time wrt N
+------> 3Nsquare + 7N -4
+
+ O(Npow2) [Eliminating all constants)
+-********************************************************************************
+BUBBLE SORT
+
+void bubbleSort(int arr[], int n)
+{
+    int i, j;            1 ,1
+    for (i = 0; i < n-1; i++)       init 1 + condition N-1 + 1  +incre n-1= 2N
+       // Last i elements are already in place
+    for (j = 0; j < n-1; j++)         --> init(n-1)+ condition (X+1)      + incre (x) 
+        if (arr[j] > arr[j+1])                    3x times [ 2 index +1 comparison]
+	{
+      int temp = sortArr[minIndex]   2 X  
+    sortArr[minIndex] = sortArr[i];   2 X
+    sortArr[i] = temp;   2 X
+}
+return 			1
+}
+
+Explanation for X :
+For every value of i inner loop iterates in the following way
+i loop n=5
+n-1 times
+
+j loop
+when 
+i  j
+4 0 1 2 3  - 4
+3 0 1 2      - 3
+2 0 1         - 2
+1 0            - 1
+
+
+1+ 2+ 3 + ...N-1-- X times
+
+
+--------------------------
+
+T(N) = 1 + 1+2N +(N-1) +
+	X+1 +x + 3X+2X+ 2X+2X+1
+
+   = 11X + 3N + 3
+
+1+2+3 ....+k  = k(K+1) /2
+
+          N-1(N-1+1) /2 ----> N(N-1) / 2------------>11( Npow2 -N /2)
+
+11 * Nsquare - 11N + 3N + 3
+/2                    /2
+
+O(Nsquare) [Eliminating all constants]
+
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+BUBBLE SORT
+Input: arr[] = {5, 1, 4, 2, 8}
+
+First Pass: 
+
+Bubble sort starts with very first two elements, comparing them to check which one is greater.
+( 5 1 4 2 8 ) –> ( 1 5 4 2 8 ), Here, algorithm compares the first two elements, and swaps since 5 > 1. 
+( 1 5 4 2 8 ) –>  ( 1 4 5 2 8 ), Swap since 5 > 4 
+( 1 4 5 2 8 ) –>  ( 1 4 2 5 8 ), Swap since 5 > 2 
+( 1 4 2 5 8 ) –> ( 1 4 2 5 8 ), Now, since these elements are already in order (8 > 5), algorithm does not swap them.
+
+Second Pass: 
+
+
+Now, during second iteration it should look like this:
+( 1 4 2 5 8 ) –> ( 1 4 2 5 8 ) 
+( 1 4 2 5 8 ) –> ( 1 2 4 5 8 ), Swap since 4 > 2 
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –>  ( 1 2 4 5 8 ) 
+
+Third Pass: 
+
+Now, the array is already sorted, but our algorithm does not know if it is completed.
+The algorithm needs one whole pass without any swap to know it is sorted.
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+
+
+
+
+======================================
+

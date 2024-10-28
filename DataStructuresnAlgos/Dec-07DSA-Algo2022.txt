@@ -1,0 +1,372 @@
+DataStructures
+Primitive NonPrimitive
+Linear Arrays/LinkedList /Stack / Queue
+Non Linear - Tree / Graph /Heap
+--------------------------------------
+15 5 24 8 1 3 16 10 20
+----------------------------------------------------------------------------------------------------------------------------------
+What is a Datastructure?
+What is Algorithm?
+[Time Complexity]-
+Asymptotic ANalysis/Asymptotic Notations-Expressions derived based on the algorithm [ Ologn]--->chart
+
+[BiG-Oh Notation]/Big Omega Notations/Big Theta Notations
+Worst Case/Best Case/Average Case analysis
+-------------
+Given an ALgorithm - How to calculate [Time Complexity]
+for atleast
+2-3 samples of deriving Big[O] notation...Arriving at Time Complexity for Binary Search O[log n]
+----------------------------------------------------------------------------------------------------------------------------------
+int  var1;
+
+
+int arr[] =
+
+FIle Hard disk
+DB	vs 		Data structures [list, arraylist, linkedlist,queue] - Memory
+
+[List - Ordered	    VS		File / DB
+[Map - key value
+Set - unique]]
+Operations
+Insert
+delete
+update
+sort
+search			Collections java.util
+----------
+Resource : Memory / Time
+--------------------------------
+HealthCare 0.5
+1 algo Sort - 1.5 sec  2Mb		[X]
+2 algo Sort -  2.5 sec 1.5 Mb
+3) algo Sort  - 1.75   sec 1.75 Mb
+--------------------------------------
+
+samples - labl - calculation - [] 
+algorithm - time complexity
+
+
+GA - FSD
+
+
+[1 2 3 4 5 6 7 8 9 10] books
+
+10sec -- 100      1000sec
+12sec
+
+[algo1 ]  algo2 algo3
+
+10  100  1 million [best case ]
+
+best case analysis - found at 0th
+ [worst case -did not find[last index]
+average case - moddle 
+
+
+find the square of a number
+[
+arrange a party
+
+plan costs/ arrangements /tables n chairs/food / gifts/
+
+max no. of [400]
+
+[100 ]
+
+]
+
+
+
+Application efficiency [ time + space]
+
+Algorithm : STep By STep Approach involving Logical ideas that we take in order to achieve a solution for a Problem.
+
+
+
+For eg. I'l Give you 100 Books and ask you to sort the books by alphabetical order
+
+1) All Books starting with A together , B Together and so on
+within A sorting next character , within B sorting next character and so on
+
+2)Take a Book and second Book check whichever is smaller
+
+Beverley Hills vs Aladdin , put [ Aladdin , Beverley Hills]
+take next book Elusive Garden [Aladdin, Beverley Hills,  Elusive Garden]
+take next book Chattisgarh Tales  [Aladdin, Beverley Hills, Chattisgarh Tales, Elusive Garden]
+
+
+3)Take Book starting with A, Next with B , next with C and so on until Z
+then again start with A and keep arranging in order
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+[Asymptotic Analysis] -------[Asymptotic Notations]----[ Time complexities  Chart ]-
+
+function representations of those algo -----[ time complexity 
+log n
+npow2
+
+
+[1 25][12][43][34][87][92][34][85][92][100] 120
+1			      100	 [algo1] [algo2] ---big[o]    -----time complexity charts []
+
+
+Asymptotic analysis - asymptotic notations algos -- complexity
+
+[Worst Case Analysis] - Big [oh]
+----------------------
+[Average   Big Theta
+[Best Case Analysis] - Big Omega
+
+O[n]
+O[n pow 2]
+
+Time Complexity :
+
+Time complexity is defined as the amount of time taken by an algorithm to run, as a function of the length of the input. It measures the time taken to execute each statement of code in an algorithm. It is not going to examine the total execution time of an algorithm. Rather, it is going to give information about the variation (increase or decrease) in execution time when the number of operations (increase or decrease) in an algorithm. Yes, as the definition says, the amount of time taken is a function of the length of input only.
+
+-----
+
+
+algo1 10  100    
+algo2  15  100    1M faster
+
+
+
+
+
+
+
+
+It might be possible that for some inputs, the first algorithm performs better than the second. And for some inputs second performs better. 
+It might also be possible that for some inputs, the first algorithm performs better on one machine, and the second works better on another machine for some other inputs.
+
+Asymptotic Analysis is the big idea that handles the above issues in analyzing algorithms. In Asymptotic Analysis, we evaluate the performance of an algorithm in terms of input size (we don’t measure the actual running time). We calculate, how the time (or space) taken by an algorithm increases with the input size. 
+
+Asymptotic analysis refers to computing the running time of any operation in mathematical units of computation. For example, the running time of one operation is computed as f(n) and may be for another operation it is computed as g(n2). This means the first operation running time will increase linearly with the increase in n and the running time of the second operation will increase exponentially when n increases. Similarly, the running time of both operations will be nearly the same if n is significantly small.
+
+Usually, the time required by an algorithm falls under three types −
+
+algorithms - asymptotic notation
+
+algorithm a - binary search - notation - n power 2
+-------------------------------------------
+algo write to sort series of string
+algo1 - as not1 time chart1
+algo2 - as not 2
+algo3 - as not 3
+
+
+
+algo write to sort series of numbers
+algo1
+algo2
+algo3
+
+
+
+--------------------------------------------------------
+
+
+[logn n2 n3+c]
+
+Worst Case------------------------Big oh Notation------> [      ]
+------------------------------
+Best Case                               Big Omega 
+Average Case                         BIg Theta
+
+
+
+--------------------------------------------------------------------------------
+
+Algorith Quick sort   o(logn)        
+algorithm  1             npower2
+algorithm  2           log npower2
+[Derive notation for a given algo]
+[Binary search Merge Sort]
+
+Asymptotic Notations
+Asymptotic notations are the mathematical notations used to describe the running time of an algorithm when the input tends towards a particular value or a limiting value.
+
+For example: In bubble sort, when the input array is already sorted, the time taken by the algorithm is linear i.e. the best case.
+
+Ο(n): Is the upper bound of an algorithm's running time and measures the worst case scenario of how long an algorithm can possibly take to complete a given operation.
+O(g(n)) = { f(n): there exist positive constants c and n0
+            such that 0 ≤ f(n) ≤ cg(n) for all n ≥ n0 }
+The above expression can be described as a function f(n) belongs to the set O(g(n)) if there exists a positive constant c such that it lies between 0 and cg(n), for sufficiently large n.
+---------------------
+
+Ω(n): Is the lower bound of an algorithm's running time and measures the best case scenario of how long an algorithm can possibly take to complete a given operation.
+Ω(g(n)) = { f(n): there exist positive constants c and n0 
+            such that 0 ≤ cg(n) ≤ f(n) for all n ≥ n0 }
+
+The above expression can be described as a function f(n) belongs to the set Ω(g(n)) if there exists a positive constant c such that it lies above cg(n), for sufficiently large n.
+
+For any value of n, the minimum time required by the algorithm is given by Omega Ω(g(n)).
+----------------------------
+
+Θ(n): Is charting both the upper and lower running time boundaries, with the average case scenario express as the average between each border.
+Θ(g(n)) = { f(n): there exist positive constants c1, c2 and n0
+            such that 0 ≤ c1g(n) ≤ f(n) ≤ c2g(n) for all n ≥ n0 }
+
+The above expression can be described as a function f(n) belongs to the set Θ(g(n)) if there exist positive constants c1 and c2 such that it can be sandwiched between c1g(n) and c2g(n), for sufficiently large n.
+
+If a function f(n) lies anywhere in between c1g(n) and c2g(n) for all n ≥ n0, then f(n) is said to be asymptotically tight bound.
+
+---------------------
+Example: Let us consider a model machine that has the following specifications: 
+*******************************************************************************************************************************************
+Single processor 
+32 bit 
+Sequential execution 
+1 unit time for arithmetic and logical operations 
+1 unit time for assignment and return statements 
+****************************************************************************************************************************************
+Q1. Find the Sum of 2 numbers on the above machine:
+
+For any machine, the pseudocode to add two numbers will be something like this:
+
+Pseudocode : Sum(a, b) { return a + b }
+
+[4 Minutes  8.16]
+
+AVERAGE CASE 
+/ BEST CASE
+WORST CASE - >>>>>>> Big[Oh]
+--------------------
+The above code will take 2 units of time(constant): 
+one for arithmetic operations and 
+one for return. (as per the above conventions). 
+Therefore total cost to perform sum operation (Tsum) = 1 + 1 = 2    K O(1)
+Time Complexity = O(2) = O(1), since 2 is constant
+O(1)
+-----------------------------------------
+Q2. Find the sum of all elements of a list/array
+[Time Complexity: ] 
+
+1 Unit of time for arithmetic & Logical operations each
+1 unit of time for assignment & return
+The pseudocode to do so can be given as:
+
+Pseudocode : list_Sum(A, n) [1,2,3,4,5]
+// A->array and
+// n->number of elements in array
+{
+sum = 0          
+for i = 0 to n-1   --------------->for(int i=0;i<n;i++)
+    sum = sum + A[i] [                      1+2]
+return sum
+}
+
+
+------------------------------------------------------
+To understand the time complexity of the above code, let’s see how much time each statement will take:
+
+Pseudocode : list_Sum(A, n)
+{
+sum =0                   // cost=1  no of times=1
+for i=0 to n-1   //for(int i=0;i<n;i++) // cost=2  no of times=n+1 (+1 for the end false condition) for(int i;i<n;i++)
+
+i =0    1 1 time    [1 + 1(n)  +1(n]    2n+1
+    sum = sum + A[i]       // cost=2  no of times=n
+return sum                 // cost=1  no of times=1
+
+O(n pow 2)
+
+Memory
+
+------------
+
+100   200   300
+|
+[Algorithm] [Algorithm]
+nlog n merge 
+
+
+herefore the total cost to perform sum operation 
+
+4 + 1Million
+Tsum=1 + 2 * (n+1) + 2 * n + 1 = 4n + 4 =C1 * n + C2 = O(n)     cn + C --O(n)
+}
+4n + 4
+
+4Million + 4
+===========================================================================================================
+2(2n+2)
+Binary ----> log n
+
+
+[1+ 2*(n+1)+ 2 *(n + 1)]------------->1 + 2n+2 + 2n+ 1---------->[4n+4] ---------->2(2n+2)----------------c(n) + c1------>O(n)
+
+1 + 2(n+1) + 2(n) + 1
+
+1 + 2n+1 + 2n+ 1--[4n+4] cn + c----> n   O(n)
+
+2n+1
+2n+1
+1+1
+4n+3 ----->  cn + c  O(n)
+
+O(log(n))
+
+32 45 67 89 90 96 99
+mid
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Classification of Algorithms
+1) Based on Implementation
+a) Recursion / Iteration
+b) Procedural / Declarative
+c) Serial / Parallel / Distributed
+d) Deterministic / Non Deterministic
+(predefined process) / (heuristics - guess)
+
+2) By The Design Method
+a) Greedy Method - stage s local best
+b) Divide & Conquer - 
+c) Dynamic Programming - overlapping problems - memoriztion
+d) Linear Programming - inequality in inputs
+
+3) Other Classification of Algos
+a) Classification by Research area
+b) Based on Complexity
+c) Randomized Algorithms
+d) Branch & Bound Algorithms
+e) Backtracking
+----------------------------------------------------------------------------------------------------------------------------------
+

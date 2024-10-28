@@ -1,0 +1,88 @@
+Binary Search Big Oh Notation derivation
+https://www.youtube.com/watch?v=TomQQb2kJvc
+
+bin_search(int arr[] , int key, int low , int high)
+{
+	mid = (start + end) / 2
+	if( arr[mid] == key)
+	{
+		return mid;
+	}
+	if(low == high)
+	{
+		return -1
+	}
+	if( arr[mid] > key)
+	return binarysearch(arr, key,low,mid-1)
+
+	if(arr[mid] < key)
+	retrn bin_search(arr,key,mid+1,high)
+}
+
+--------------
+We do not go to 2 base cases found in mid & not found
+T(N) = C+ T(N/2) ------1            -------------N/2       ===     N/ N/2
+     all checks take const time + 
+
+
+T(N/2) = C+ T(N/4) ------2			C + C+T(N/4)-- 2c + T(N/4)
+
+substitute 2 in 1
+
+T(N) = T(N/4) + 2c -----3
+
+[T(N/4) = C + T(N/8)----]-4(based on 1)
+
+substitute 4 in 3
+
+T(N) = T(N/8) + 3c -----5  T(N/ 2 
+|
+|
+
+
+T(N)  = T(N/2 pow i)  + ic--------->eqn 6
+
+Problemsize reduces when we reach the searched element
+At some point as N/2 pow i dimishes we reach 1 element
+[we find time taken for n/2 elements n/4 elements n/8 elements and so on finally reach 1 element]
+T( N/2 pow i) = T(1) => T(N/2 pow i) = T(1)
+
+at some point as n by 2 power i diminishes we reach one element
+=> N/2powi = 1 
+T(N/2powi) = T(1) at some point
+
+=>N = 2powi =>   cross multiplying
+to find value of i take log on  both sides			
+
+=>[log N = log 2powi] 
+      2       2
+
+=>  log N  =  i ---------->eqn 7[log principles  log  k power x  ---- > x]
+       2			     k	
+--------------------------------------> 2powi = N
+T(N) = T(N/2powi)+ic-------->6
+
+T(N) = T( N / 2 pow log  N) + C Log N
+		   	2	   2
+	= T(N/N) + C log N
+			2
+T(N) = T(1) + c log N
+    		   2
+
+-Ignore constants
+-Pick that term which is part of the function
+	which will mosty affect the growth of the function w.r.t input size - remove coefficients
+
+
+T(N) = K+ C log N
+
+
+O(log N)
+     2
+
+-----------------
+Bin Search O(log n)
+Lin Search O(n)
+----------------------------------------------------------------------
+
+Linear Search - O(n)

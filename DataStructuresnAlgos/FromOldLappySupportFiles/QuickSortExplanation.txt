@@ -1,0 +1,168 @@
+Hi , Kishore,
+
+Quick Sort can be implemented in multiple ways .
+For eg.1 Approach is "Partition Approach"
+
+This approach itself can be implemented in multiple ways:
+
+for eg. lets take
+
+an array
+
+        0 1 2  3 4 5 6 7  8  <-index 
+	7 6 10 5 9 2 1 15 7  <-values
+
+The approach is 
+1) Take a Pivot element
+2) Put all elements whose values are lesser than Pivot element on the Left
+3) Put all elements whose values are greater than Pivot element on the right
+
+in the above case
+
+if 7 is pivot in the 0th position
+
+4) we need to arrange in such a way it re-positions itself as shown below
+
+		0 1 2 3 4  5  6  7 8
+		6 5 2 1	7 [7] 10 9 15   
+
+		    next step 5 2 1 [6] 7 [7] 9 [10] 15
+		    next step 1 2 [5] [6] [7] [7] [9] [10] [15]
+
+so on finally it gets sorted
+
+5) Please note the  numbers on both the side need not be sorted in this repositioning initially 
+6) but ensures that the numbers on the left are lesser than the pivot and on the right are greater than the pivot
+7) The New Position of Pivot is fixed and final and we  do not change further
+
+Now the Same process continues for the left hand side array and right hand side array until we reach single elements
+
+which would be Naturally Sorted - Hence Partition Approach;  
+
+The approach used to partition is as follows
+
+lb-Lower bound
+ub-upper bound
+int start,end
+			
+        lb                 ub 
+	 0 1 2  3 4 5 6 7  8 index
+	 7 6 10 5 9 2 1 15 7 values
+    start		   end
+initially
+ start is at 0 index  start-->s for simplicity
+  end is at  8 index  end --->e for simplicity
+	Initially consider 0th element as Pivot
+	increment start until you find a number greater than pivot here greater than 7
+	decrement end until you find number lesser than or equal to pivot
+			
+        lb                 ub 
+	 0 1 2  3 4 5 6 7  8 index
+	 7 6 10 5 9 2 1 15 7 values
+    	     s	   	   e
+	
+	s is positioned at index 2 i.e value 10
+	e is positioned at index 8 i.e value 7
+
+	at this stage swap  s value and e value  ie  ---> before swap   7 6 [10] 5 9 2 1 15 [7]
+								             s               e
+
+
+						      ----> after swap  7  6 [7] 5 9 2 1 15 [10]
+									      s               e
+Next further push s and decrement e                                     7  6  7  5 9 2 1 15 10
+                                                                                   s   e
+s stops at 9 which is greater than pivot 7
+e stops at 1 which is lesser than pivot 7            ----> after swap   7  6  7  5 1 2 9 15 10
+										   s   e
+
+Further push s and pull e 						7  6  7  5 1 2 9 15 10
+										     e s	
+							PLEASE NOT HERE start and end cross each other
+								once start is greater than end index wise stop swapping
+
+				AT THIS POSITION 
+						swap PIVOT value 7 and end value
+
+						before swap		7  6  7  5 1 2 9 15 10
+										     e s
+
+						After swap		[2]  6  7  5  1 [7] 9  15 10
+
+
+				Now 7 is partioning the array into 2 parts left hand side lesser than pivot and right hand side greater
+
+				2  6  7  5  1  [7]  9  15  10
+
+Same thing is to be repeated finally it gets sorted the Code for the same
+
+
+
+
+
+
+
+
+Partition (array,lb,ub)
+{
+	pivot = array[lb]
+	start = lb;
+	end = ub;
+
+	while (start < end)
+	{
+		while(a[start] <= pivot)  //push start until you find a value greater than pivot
+		{
+			start++;
+		}
+		while(a[end] > pivot) //pull end until you find a value lesser than pivot
+		{
+			end--;
+		}
+		if(start < end) // we do not swap if start crosses end
+		{
+			swap(array[start],array[end]); //  first level swap
+		}
+	}
+	swap (array[lb],array[end])
+		return end;
+}
+
+NEXT yu need to do partition between [lb and (end-1)] and [end+1 and ub] process continues
+loc ->location
+so 
+QuickSort(array,lb,ub)
+{
+	if(lb < ub)
+	{
+		loc = Partition(array,lb,ub);
+		QuickSort(Array,lb,loc-1);
+		QuickSort(Array,loc+1,ub);
+
+	}
+
+
+}
+ABOVE ITSELF WOULD QUICK SORT 
+IF YOU UNDERSTAND THE ABOVE LOGIC APPLY SIMILAR APPROACH SLIGHTLY MODIFIED IN THE  CODE GIVEN TO YOU
+
+small change is
+
+Pivot is not the starting element but the pivot is the end element
+also instead of pushing start and pulling end
+	only start is incremented start is initially -1 then to 0 etc [avoiding 1 operation of end]
+	
+	once you come outside swap for partitioning element
+
+after that same logic
+
+
+
+
+
+
+
+
+
+
+

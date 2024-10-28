@@ -1,0 +1,17 @@
+public static java.sql.Date utilToSqlDateConverter(java.util.Date utDate) {
+java.sql.Date sqlDate = null;
+if (utDate != null) {
+sqlDate = new java.sql.Date(utDate.getTime());
+}
+return sqlDate;
+}
+
+public static java.util.Date stringToDateConverter(String stringDate) {
+SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+dateFormat.setLenient(false);
+try {
+return dateFormat.parse(stringDate);
+} catch (ParseException pe) {
+return null;
+}
+}
